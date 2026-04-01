@@ -1,16 +1,111 @@
-# React + Vite
+# Interactive Counter App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple yet interactive counter application built with React and Vite. This project demonstrates React fundamentals including component composition, state management, and event handling.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Counter Display**: Visual display of the current counter value with dynamic color coding:
+  - Green for positive values
+  - Red for negative values  
+  - Gray for zero
+- **Counter Controls**: Three action buttons:
+  - Increment: Increase counter by the step value
+  - Decrement: Decrease counter by the step value
+  - Reset: Reset counter back to zero
+- **Custom Step**: Adjust the increment/decrement step size with an input field
+- **Component-Based Architecture**: Clean separation of concerns using modular React components
 
-## React Compiler
+## Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+vite-project/
+├── src/
+│   ├── components/
+│   │   ├── Button.jsx           # Reusable button component
+│   │   ├── CounterControls.jsx  # Control buttons container
+│   │   └── CounterDisplay.jsx   # Counter display with color logic
+│   ├── App.jsx                  # Main app component
+│   ├── App.css                  # App styling
+│   ├── index.css                # Global styling
+│   └── main.jsx                 # Entry point
+├── public/                       # Static assets
+├── package.json
+├── vite.config.js
+├── eslint.config.js
+└── index.html
+```
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone or navigate to the project directory
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Development
+
+Run the development server with hot module replacement (HMR):
+
+```bash
+npm run dev
+```
+
+The app will be available at `http://localhost:5173`
+
+### Build
+
+Build the project for production:
+
+```bash
+npm run build
+```
+
+Output files will be in the `dist/` directory.
+
+### Preview
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+### Linting
+
+Check code quality with ESLint:
+
+```bash
+npm run lint
+```
+
+## Tech Stack
+
+- **React 19.2.4**: UI library
+- **Vite 8.0.1**: Build tool and dev server
+- **JavaScript/JSX**: Programming language
+- **CSS**: Styling
+- **ESLint**: Code quality tool
+
+## How It Works
+
+The app maintains two pieces of state:
+- `count`: The current counter value
+- `step`: The increment/decrement step size
+
+Users can modify the counter through button clicks or directly adjust the step value. The `CounterDisplay` component automatically applies color styling based on the counter value.
+
+## Future Enhancements
+
+- Local storage to persist counter state
+- Undo/Redo functionality
+- Keyboard shortcuts
+- Animation effects
+- Dark mode toggle
